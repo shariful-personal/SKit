@@ -5,12 +5,6 @@ using UnityEngine;
 
 namespace SKit.Editor
 {
-    public class SceneList : ScriptableObject
-    {
-        [SerializeField] private SceneAsset[] scenes = null;
-        public SceneAsset[] Scenes => scenes;
-    }
-
     public class SceneOpener : EditorWindow
     {
         private const string path = "Assets/Resources/SceneList.asset";
