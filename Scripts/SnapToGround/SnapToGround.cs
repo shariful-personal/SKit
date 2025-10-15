@@ -2,21 +2,23 @@
 using UnityEngine;
 using UnityEditor;
 
-public class SnapToGround : EditorWindow
+namespace SKit.Editor
 {
-    [MenuItem("SKit/Snap To Ground &g", false, 100)]
-    private static void SnapSelectedToGround()
+    public class SnapToGround
     {
-        foreach (GameObject obj in Selection.gameObjects)
+        [MenuItem("SKit/SnapToGround &g", false, 100)]
+        private static void SnapSelectedToGround()
         {
-            if (obj != null)
+            foreach (GameObject obj in Selection.gameObjects)
             {
-                Collider collider = obj.GetComponent<Collider>();
-                if (collider != null)
+                if (obj != null)
                 {
-                    if (Physics.Raycast(obj.transform.position, Vector3.down, out RaycastHit hit))
+                    if (obj.TryGetComponent<Collider>(out var collider))
                     {
-                        obj.transform.position = hit.point + Vector3.up * (collider.bounds.extents.y);
+                        if (Physics.Raycast(obj.transform.position, Vector3.down, out RaycastHit hit))
+                        {
+                            obj.transform.position = hit.point + Vector3.up * collider.bounds.extents.y;
+                        }
                     }
                 }
             }

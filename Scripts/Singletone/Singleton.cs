@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace Skit
+namespace SKit
 {
     public class Singleton<T> : MonoBehaviour
     {

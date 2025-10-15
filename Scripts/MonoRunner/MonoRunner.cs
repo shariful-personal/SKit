@@ -1,5 +1,4 @@
 using System;
-using Skit;
 
 namespace SKit
 {

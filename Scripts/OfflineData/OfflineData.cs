@@ -1,7 +1,7 @@
 using System;
 using UnityEngine;
 
-namespace Skit
+namespace SKit
 {
     [Serializable]
     public class OfflineData
