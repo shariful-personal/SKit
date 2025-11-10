@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace RiseupLabsSDK
+namespace SKit
 {
     [RequireComponent(typeof(RectTransform))]
     [AddComponentMenu("SKit/SafeArea")]
